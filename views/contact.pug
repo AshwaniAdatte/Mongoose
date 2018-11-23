@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	body
+	h3.center-align Contacts
+	each val in data
+		.row
+			.col-6
+				.card-panel
+					.card-content
+						
+						h4 #{val.name}
+						.card-action
+						p Real Name : #{val.name}
+						p Phone Num : #{val.phoneNo}
+						ul#nav-mobile.right.hide-onmed-and-down
+						a.navbar-brand(href='deleteRow?name='+val.name).btn Delete
+						a.navbar-brand(href='viewFile?_id='+val._id).btn Update
+	a.navbar-brand(href='/').btn Back
+	a.navbar-brand(href="/getAllValues").btn View All Values
+						
